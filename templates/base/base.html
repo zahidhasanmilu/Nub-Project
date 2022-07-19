@@ -9,8 +9,8 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
     {% block title %}
-   
-    {% endblock title %} 
+
+    {% endblock title %}
 
     <meta name="description" content="description">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -37,8 +37,8 @@
                 <form method="GET" action="{% url 'search' %}">
                     {% csrf_token %}
                     <button class="go-btn search__button" type="submit"><i class="icon anm anm-search-l"></i></button>
-                    <input class="search__input" type="search" name="keywords"  value="" placeholder="Search entire store..."
-                        aria-label="Search" autocomplete="off">
+                    <input class="search__input" type="search" name="keywords" value=""
+                        placeholder="Search entire store..." aria-label="Search" autocomplete="off">
                 </form>
                 <button type="button" class="search-trigger close-btn"><i class="anm anm-times-l"></i></button>
             </div>
@@ -68,12 +68,12 @@
                                 aria-hidden="true"></i></span>
                         <ul class="customer-links list-inline">
                             {% if request.user.is_authenticated %}
-                            
+
                             <li><a href="wishlist.html">Wishlist</a></li>
                             <li><a aria-current="page" href="{% url 'signout' %}">Logout</a></li>
-                              <li><a href="{% url 'cart' user.id %}">Cart</a></li>
-                              <li><a href="{% url 'order' %}">Checkout</a></li>
-                              <li><a href="/">{{user}}</a></li>
+                            <li><a href="{% url 'cart' user.id %}">Cart</a></li>
+                            <li><a href="{% url 'order' %}">Checkout</a></li>
+                            <li><a href="/">{{user}}</a></li>
 
                             {% else %}
                             <li><a href="{% url 'signin' %}">Login</a></li>
@@ -92,7 +92,7 @@
                     <!--Desktop Logo-->
                     <div class="logo col-md-2 col-lg-2 d-none d-lg-block">
                         <a class="navbar-brand" href="/">
-                           <b> NUB SHOP </b>
+                            <b> NUB SHOP </b>
                         </a>
                     </div>
                     <!--End Desktop Logo-->
@@ -201,7 +201,8 @@
                                         </ul>
                                     </div>
                                 </li>
-                                <li class="lvl1"><a href="{% url 'trending' %}"><b>Trending</b> <i class="anm anm-angle-down-l"></i></a>
+                                <li class="lvl1"><a href="{% url 'about' %}"><b>About Us</b> <i
+                                            class="anm anm-angle-down-l"></i></a>
                                 </li>
 
                                 <li class="lvl1"><a href="#"><b>Buy Now!</b> <i class="anm anm-angle-down-l"></i></a>
@@ -233,7 +234,7 @@
         {% block content %}
 
         {% endblock content %}
-                
+
 
 
         <!--Footer-->
@@ -307,16 +308,19 @@
                                 <h4 class="h4">Quick Shop</h4>
                                 <ul>
                                     <li><a href="#">Women</a></li>
-                                    <li><a href="#">Men</a></li>
-                                    <li><a href="#">Kids</a></li>
-                                    <li><a href="#">Sportswear</a></li>
-                                    <li><a href="#">Sale</a></li>
+                                    {% for cat in catagories %} 
+                                    <li>
+                                        <a href="/?catagory={{ cat.id }}">{{cat.name }}</a>
+                                        <!-- <a class="nav-link" href="#">{{cat.name}} <span class="sr-only">(current)</span></a> -->
+                                    </li>
+
+                                    {% endfor %}
                                 </ul>
                             </div>
                             <div class="col-12 col-sm-12 col-md-3 col-lg-3 footer-links">
                                 <h4 class="h4">Informations</h4>
                                 <ul>
-                                    <li><a href="#">About us</a></li>
+                                    <li><a href="{% url 'about' %}">About us</a></li>
                                     <li><a href="#">Careers</a></li>
                                     <li><a href="#">Privacy policy</a></li>
                                     <li><a href="#">Terms &amp; condition</a></li>
@@ -361,9 +365,9 @@
         <!--Quick View popup-->
         <div class="modal fade quick-view-popup" id="content_quickview">
             <div class="modal-dialog">
-                
+
                 <div class="modal-content">
-                 
+
                     <div class="modal-body">
                         <div id="ProductSection-product-template" class="product-template__container prstyle1">
                             <div class="product-single">
@@ -518,14 +522,14 @@
                                         </div>
                                     </div>
                                 </div>
-                              
+
                                 <!--End-product-single-->
                             </div>
                         </div>
                     </div>
-                    
+
                 </div>
-                
+
             </div>
         </div>
         <!--End Quick View popup-->

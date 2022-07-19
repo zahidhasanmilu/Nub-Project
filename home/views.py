@@ -19,6 +19,7 @@ def home(request):
 
 # def productByCat(request):
     
+    
 
 
 def trending(request):
@@ -55,3 +56,6 @@ def details(request, slug):
     items = Products.objects.filter(slug=slug).first()
 
     return render(request, 'home/product_detaits.html', context={'items': items})
+
+def about(request):
+    return render(request, 'home/about.html')
