@@ -1,8 +1,10 @@
 from django.db import models
+from autoslug import AutoSlugField
 
 
 class Catagory(models.Model):
     name = models.CharField(max_length=20)
+
 
     @staticmethod
     def get_all_catagories():

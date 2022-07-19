@@ -51,7 +51,25 @@
   </div>
 </div>
 <!--End Home slider-->
+<div class="section">
+  <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
 
+          {% for cat in catagories %}
+          <li class="nav-item active">
+            <a href="/?catagory={{ cat.id }}" class="list-group-item list-group-item-action">{{cat.name }}</a>
+            <!-- <a class="nav-link" href="#">{{cat.name}} <span class="sr-only">(current)</span></a> -->
+          </li>
+            
+          {% endfor %}  
+        </ul>
+      </div>
+
+    </nav>
+  </div>
+</div>
 
 
 <!--Weekly Bestseller-->
@@ -147,7 +165,7 @@
     <div class="row">
       <div class="col-12 col-sm-12 col-md-12 col-lg-12">
         <div class="section-header text-center">
-          <h2 class="h2">Male T-shirt</h2>
+          <h2 class="h2">Cloth</h2>
           <p>Grab these new items before they are gone!</p>
         </div>
       </div>
@@ -159,7 +177,7 @@
           <!-- start product image -->
           <div class="product-image">
             <!-- start product image -->
-            <a href="{% url 'product_details' items.pid %}" class="grid-view-item__link">
+            <a href="{% url 'product_details' items.slug %}" class="grid-view-item__link">
               <!-- image -->
               <img class="primary blur-up lazyload" data-src="{{items.image.url}}"
                 src="/static/images/product-images/product-image1.jpg" alt="image" title="product">
@@ -236,55 +254,6 @@
 <!--End Featured Product-->
 
 
-<div class="container mt-2">
-  <div class="row">
-
-
-    <div class="col-lg-2 mx-auto">
-      <div class="list-group">
-        <a href="/" class="list-group-item list-group-item-action list-group-item-success ">All Catagories</a>
-      </div>
-      <div class="list-group">
-        {% for catagory in catagories %}
-        <a href="/?catagory={{ catagory.id }}" class="list-group-item list-group-item-action">{{catagory.name }}</a>
-        {% endfor %}
-      </div>
-
-      <hr>
-
-
-    </div>
-
-
-
-    <!--Right side start-->
-    <div id="products" class="col-lg-9 mx-auto">
-
-      <div class="row">
-        {% for items in item %}
-        <div class="card mx-0 mb-2 bg-success text-dark bg-black" style="width: 185px;">
-
-          <a href="{% url 'product_details' items.pid %}"><img src="{{ items.image.url }}" width="160" height="160"
-              class="card-img-top" alt="..."></a>
-          <div class="fs-card-title mt-2">
-            <a href="{% url 'product_details' items.pid %}" class="text-decoration-none">
-              <p style="color:white;">{{items.title}}</p>
-            </a>
-          </div>
-
-          <div class="fs-card-price">
-            <a href="{% url 'product_details' items.pid %}" class="text-decoration-none">
-              <p style="color:red">BDT. {{items.price}}</p>
-            </a>
-          </div>
-        </div>
-        {% endfor %}
-      </div>
-    </div>
-
-
-  </div>
-</div>
 
 {% endblock content %}
 

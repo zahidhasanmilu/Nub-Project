@@ -1,10 +1,13 @@
 from django.db import models
 from home.models.catagory import Catagory
+from autoslug import AutoSlugField
 
 
 class Products(models.Model):
     pid = models.IntegerField(auto_created=True, primary_key=True)
     title = models.CharField(max_length=60)
+    slug = AutoSlugField(populate_from='title',
+                         blank=True, unique=True, null=True)
     price = models.FloatField(default=0)
     catagory = models.ForeignKey(Catagory, on_delete=models.CASCADE, default=1)
     description = models.TextField(max_length=500, null=True, blank=True)

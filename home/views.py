@@ -17,6 +17,9 @@ def home(request):
         return render(request, 'home/index.html', context={'item': products, 'catagories': catagory})
     return render(request, 'home/index.html', context={'item': products, 'catagories': catagory})
 
+# def productByCat(request):
+    
+
 
 def trending(request):
     products = Products.get_all_products()
@@ -48,7 +51,7 @@ def search(request):
         return render(request, 'home/search_results.html', context={'products': results, 'invalid': True})
 
 
-def details(request, pid):
-    items = Products.objects.filter(pid=pid).first()
+def details(request, slug):
+    items = Products.objects.filter(slug=slug).first()
 
     return render(request, 'home/product_detaits.html', context={'items': items})
