@@ -1,6 +1,5 @@
 from django.db import models
 from home.models.catagory import Catagory
-from autoslug import AutoSlugField
 
 
 class Products(models.Model):
