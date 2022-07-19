@@ -1,0 +1,87 @@
+{% extends 'base/base.html' %}
+
+{% block title %}
+<title>Nub Shop | Cart </title>
+  
+{% endblock title %}
+
+
+{% block content %}
+<div class="container-fluid mt-2">
+  <div class="row">
+
+    <div id="products" class="col-lg-8">
+      <div class="text-center">
+        <h1>Shopping cart</h1>
+      </div>
+      <div class="row">
+        <div class="card mx-auto mb-2">
+          <table class="table">
+            <thead class="alert bg-info text-center" role="alert">
+              <tr>
+                <th scope="col" class="text-center">Name</th>
+                <th scope="col" class="text-center">Quantity</th>
+                <th scope="col" class="text-center">Price</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for citem in cart_items %}
+              <tr>      
+                <td>{{citem.title}}</td>
+                <td class="text-center">{{citem.qty}}</td>
+                <td class="text-center">{{citem.price}}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </div>
+
+    <!--Product details-->
+    <div id="products" class="col-lg-4">
+
+      <div class="row">
+
+        <div class="cart-summary">
+      
+          <div class="text-center">
+            <h1>Cart Total</h1>
+          </div>
+          <table class="table">
+            <thead class="alert bg-info text-center">
+              <tr>
+
+                <th scope="col">Sub-Total</th>
+                <th scope="col">Delivery Charge</th>
+                <th scope="col">Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+
+                <td>BDT.{{cart_total}}</td>
+                <td>Free</td>
+                <td>BDT.{{cart_total}}</td>
+              </tr>
+            </tbody>
+          </table>
+          <a href="{% url 'order' %}" class="btn btn-danger" style="float:right">Checkout</a>
+        </div>
+
+
+      </div>
+    </div>
+
+
+
+
+
+
+  </div>
+</div>
+
+{% endblock content %}
+
+<!--start Content-->
