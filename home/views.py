@@ -19,7 +19,6 @@ def home(request):
 
 # def productByCat(request):
     
-    
 
 
 def trending(request):
