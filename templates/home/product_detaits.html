@@ -1,7 +1,7 @@
 {% extends 'base/base.html' %}
 
 {% block title %}
- <title>Belle Shop | Product Details </title>
+ <title>Minion's | Product Details </title>
 {% endblock title %}
 
 
@@ -329,18 +329,12 @@
                             </div>
                             <p class="product-single__price product-single__price-product-template">
                                 <span class="visually-hidden">Regular price</span>
-                                <s id="ComparePrice-product-template"><span class="money">$900.00</span></s>
+                                <s id="ComparePrice-product-template"><span class="money"> {{items.old_price}}</span></s>
                                 <span
                                     class="product-price__price product-price__price-product-template product-price__sale product-price__sale--single">
                                     <span id="ProductPrice-product-template"><span class="money"> BDT. {{items.price}} </span></span>
                                 </span>
-                                <span class="discount-badge"> <span class="devider">|</span>&nbsp;
-                                    <span>You Save</span>
-                                    <span id="SaveAmount-product-template" class="product-single__save-amount">
-                                        <span class="money">$100.00</span>
-                                    </span>
-                                    <span class="off">(<span>16</span>%)</span>
-                                </span>
+                               
                             </p>
                             <div class="product-single__description rte">
                                 <p>{{items.description}}
@@ -376,15 +370,10 @@
                                 <h3 class="acor-ttl active" rel="tab1">Product Details</h3>
                                 <div id="tab1" class="tab-content">
                                     <div class="product-description rte">
-                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                            Lorem Ipsum has been the industry's standard dummy text ever since the
-                                            1500s, when an unknown printer took a galley of type and scrambled it to
-                                            make a type specimen book. It has survived not only five centuries, but also
-                                            the leap into electronic typesetting, remaining essentially unchanged.</p>
+                                        
                                         <ul>
-                                            <li>Specifications of Stylish Jersey t shirt for Men Comfortable and soft wear
-                                                BrandNo BrandSKU215149406_BD-1163764080Main MaterialMesh</li>
-                                            <li>Sed ut perspiciatis unde omnis iste natus error sit</li>
+                                            <li>{{items.description}}</li>
+                                
                                             
                                         </ul>
                                        
@@ -662,24 +651,7 @@
                                         <img src="/static/images/size.jpg" alt="" />
                                     </div>
                                 </div>
-                                <h3 class="acor-ttl" rel="tab4">Shipping &amp; Returns</h3>
-                                <div id="tab4" class="tab-content">
-                                    <h4>Returns Policy</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros justo,
-                                        accumsan non dui sit amet. Phasellus semper volutpat mi sed imperdiet. Ut odio
-                                        lectus, vulputate non ex non, mattis sollicitudin purus. Mauris consequat justo
-                                        a enim interdum, in consequat dolor accumsan. Nulla iaculis diam purus, ut
-                                        vehicula leo efficitur at.</p>
-                                    <p>Interdum et malesuada fames ac ante ipsum primis in faucibus. In blandit nunc
-                                        enim, sit amet pharetra erat aliquet ac.</p>
-                                    <h4>Shipping</h4>
-                                    <p>Pellentesque ultrices ut sem sit amet lacinia. Sed nisi dui, ultrices ut turpis
-                                        pulvinar. Sed fringilla ex eget lorem consectetur, consectetur blandit lacus
-                                        varius. Duis vel scelerisque elit, et vestibulum metus. Integer sit amet
-                                        tincidunt tortor. Ut lacinia ullamcorper massa, a fermentum arcu vehicula ut. Ut
-                                        efficitur faucibus dui Nullam tristique dolor eget turpis consequat varius.
-                                        Quisque a interdum augue. Nam ut nibh mauris.</p>
-                                </div>
+                              
                             </div>
                         </div>
                         <!--End Product Tabs-->

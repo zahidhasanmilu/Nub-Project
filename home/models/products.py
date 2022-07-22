@@ -8,6 +8,7 @@ class Products(models.Model):
     title = models.CharField(max_length=60)
     slug = AutoSlugField(populate_from='title',
                          blank=True, unique=True, null=True)
+    old_price = models.FloatField(default=0)
     price = models.FloatField(default=0)
     catagory = models.ForeignKey(Catagory, on_delete=models.CASCADE, default=1)
     description = models.TextField(max_length=500, null=True, blank=True)
