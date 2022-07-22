@@ -1,10 +1,13 @@
 from itertools import product
 from math import prod
+from multiprocessing import context
 from django.shortcuts import redirect, render
 from django.views import View
 from home.models import Products
 from cart.models import cartItem
 from checkout.models import Order
+from django.contrib import messages
+
 # from django.contrib.auth.decorators import login_required
 
 
@@ -39,5 +42,11 @@ def checkout(request):
             item.in_cart = False
             item.save()
             #message
-        return redirect('/')
+        return render(request, 'checkout/orderconf.html')
     return render(request, 'checkout/checkout.html')
+
+def orderconf(request):
+
+    
+  
+    return render(request,'checkout/orderconf.html' ,)
