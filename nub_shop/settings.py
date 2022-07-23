@@ -25,8 +25,8 @@ SECRET_KEY = 'django-insecure-#m0h#=x%!bael(yq4(s0+8sha+tw0)vqgk0v-47d(0u2_(ralf
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['64cf-118-179-34-209.in.ngrok.io']
-CSRF_TRUSTED_ORIGINS = ['https://64cf-118-179-34-209.in.ngrok.io']
+ALLOWED_HOSTS = ['1548-118-179-34-209.in.ngrok.io']
+CSRF_TRUSTED_ORIGINS = ['https://1548-118-179-34-209.in.ngrok.io']
 
 
 # LOGIN_URL = "/signin/"
@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    
     #Custom apps
     'home',
     'author',
