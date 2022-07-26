@@ -208,12 +208,7 @@
                                 </div>
                                 <div class="product-labels"><span class="lbl on-sale">Sale</span><span
                                         class="lbl pr-label1">new</span></div>
-                                <div class="product-buttons">
-                                    <a href="https://www.youtube.com/watch?v=93A2jOW5Mog" class="btn popup-video"
-                                        title="View Video"><i class="icon anm anm-play-r" aria-hidden="true"></i></a>
-                                    <a href="#" class="btn prlightbox" title="Zoom"><i
-                                            class="icon anm anm-expand-l-arrows" aria-hidden="true"></i></a>
-                                </div>
+                                
                             </div>
                             <!-- <div class="product-thumb product-thumb-1">
                                 <div id="gallery" class="product-dec-slider-1 product-tab-left">
@@ -321,11 +316,7 @@
                                 {% endif %}
                             </div>
                                 <div class="product-sku">ItemId: <span class="variant-sku">{{items.pk}}</span></div>
-                                <div class="product-review"><a class="reviewLink" href="#tab2"><i
-                                            class="font-13 fa fa-star"></i><i class="font-13 fa fa-star"></i><i
-                                            class="font-13 fa fa-star"></i><i class="font-13 fa fa-star-o"></i><i
-                                            class="font-13 fa fa-star-o"></i><span class="spr-badge-caption">6
-                                            reviews</span></a></div>
+                               
                             </div>
                             <p class="product-single__price product-single__price-product-template">
                                 <span class="visually-hidden">Regular price</span>
@@ -349,7 +340,7 @@
                                        <input type="text" name="pid" value="{{items.pid}}" hidden><br>
                                        <div class="quantity">
                                            <span class="qty-minus"
-                                               onclick="var effect = document.getElementById('qty'); var qty = effect.value; if( !isNaN( qty ) &amp;&amp; qty &gt; 1 ) effect.value--;return false;"><i
+                                               onclick="var effect = document.getElementById('qty'); var qty = effect.value; if( !isNaN( qty ) &amp;&amp; qty &gt; 1 ; effect.value--;return false;"><i
                                                    class="fa fa-caret-down" aria-hidden="true"></i></span>
                                            <input type="number" class="qty-text"  step="1" min="1" max="300"
                                                name="qty" value="1">
@@ -361,7 +352,15 @@
                                    <button type="submit" name="addtocart" value="5" class="btn btn-info">Add to
                                        cart</button>
                                </form>
-                               <h1>Cash on delivery</h1>
+                               <hr>
+                               <h2>Payment Method</h2>
+                               <ul>
+                                <li> <a href="#">Cash on delivery</a></li>
+                                <li><a href="#">Bkash</a></li>
+                                <li><a href="#">Rocket</a></li>
+
+                               </ul>
+                               
                             </div>
                             
                         </div>
